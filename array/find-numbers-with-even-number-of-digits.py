@@ -4,6 +4,4 @@ class Solution:
         for num in nums:
             if len(str(num)) % 2 == 0:
                 count += 1
-            else:
-                count = count # hehe=)))
         return count
