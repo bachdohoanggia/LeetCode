@@ -1,21 +1,15 @@
 class Solution:
     def sortEvenOdd(self, nums: List[int]) -> List[int]:
-        oddarr = []
-        evenarr = []
+        evenarr = sorted(nums[::2])
+        oddarr = sorted(nums[1::2], reverse = True)
+        ans = [0]*len(nums)
+        e = 0
+        o = 0
         for i in range(len(nums)):
             if i % 2 == 0:
-                evenarr.append(nums[i])
+                ans[i] = evenarr[e]
+                e += 1
             else:
-                oddarr.append(nums[i])
-        evenarr.sort()
-        oddarr.sort(reverse = True)
-        x = 0
-        y = 0
-        for i in range(len(nums)):
-                if i % 2 ==0:
-                    nums[i] = evenarr[x]
-                    x += 1
-                else:
-                    nums[i] = oddarr[y]
-                    y += 1
-        return nums
+                ans[i] = oddarr[o]
+                o += 1
+        return ans
