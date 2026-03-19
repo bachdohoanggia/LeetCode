@@ -4,3 +4,4 @@ class Solution:
         for num, idx in zip(nums, index):
             arr.insert(idx, num)
         return arr
+    
