@@ -9,18 +9,19 @@ class Solution:
             else:
                 positive.append(num*num)
 
-        negative.reverse()
-
-        i = j = 0
-        while i < len(positive) and j < len(negative):
+        i = 0
+        j = len(negative) - 1
+        while i < len(positive) and j >= 0:
             if positive[i] <= negative[j]:
                 ans.append(positive[i])
                 i += 1
             else:
                 ans.append(negative[j])
-                j += 1
+                j -= 1
         ans.extend(positive[i:])
-        ans.extend(negative[j:])
-
+        
+        while j >= 0:
+            ans.append(negative[j])
+            j -= 1
         return ans
         
