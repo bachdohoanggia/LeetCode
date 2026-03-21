@@ -1,6 +1,6 @@
 class Solution:
     def rowAndMaximumOnes(self, mat: List[List[int]]) -> List[int]:
-        max_count = 0
+        max_count = -inf
         best_idx = -1
         for i, row in enumerate(mat):
             count = sum(row)
