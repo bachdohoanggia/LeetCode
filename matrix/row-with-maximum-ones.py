@@ -7,4 +7,4 @@ class Solution:
             if max_count < count:
                 max_count = count
                 idx = i
-            return (idx, max_count)
+        return (idx, max_count)
