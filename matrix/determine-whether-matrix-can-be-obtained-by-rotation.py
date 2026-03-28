@@ -12,5 +12,5 @@ class Solution:
         for _ in range(4):
             if curr == target:
                 return True
-            curr = rotate_90(cur)
+            curr = rotate_90(curr)
         return False
