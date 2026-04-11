@@ -7,11 +7,10 @@ class Solution:
         result = []
         for s in sets:
             for word in words :
-                valid_word = True
                 for ch in word.lower():
                     if ch not in s:
-                        valid_word = False
-                if valid_word == True:
+                        break
+                else:
                     result.append(word)
         return result
                         
