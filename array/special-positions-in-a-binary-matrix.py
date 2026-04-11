@@ -4,7 +4,7 @@ class Solution:
         row = [0] * m
         col = [0] * n
         for i in range(m):
-            for j in range(n``):
+            for j in range(n):
                 row[i] += mat[i][j]
                 col[j] += mat[i][j]
         count = 0
