@@ -1,8 +1,8 @@
 class Solution:
     def numSpecial(self, mat: List[List[int]]) -> int:
         m, n = len(mat), len(mat[0])
-        row = [0] * m
-        col = [0] * n
+        row = [0] * n
+        col = [0] * m
         for i in range(m):
             for j in range(n):
                 row[i] += mat[i][j]
