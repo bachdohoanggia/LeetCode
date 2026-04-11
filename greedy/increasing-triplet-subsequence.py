@@ -2,7 +2,7 @@ class Solution:
     def increasingTriplet(self, nums: List[int]) -> bool:
         x, y = inf, inf
         for num in nums:
-            if num < x:
+            if num <= x:
                 x = num
             elif num <= y:
                 y = num
