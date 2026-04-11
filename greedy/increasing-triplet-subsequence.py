@@ -4,7 +4,7 @@ class Solution:
         for num in nums:
             if num < x:
                 x = num
-            elif x < num <= y:
+            elif num <= y:
                 y = num
             else:
                 return True
