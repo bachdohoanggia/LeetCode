@@ -1,5 +1,11 @@
 class Solution:
     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        set1 = set(nums1)
-        set2 = set(nums2)
-        return list(set1 & set2)
+        seen = [False] * 1001
+        for num in nums1:
+            seen[num] = True
+        result = []
+        for num in nums2:
+            if seen[num] == True:
+                result.append(num)
+                seen[num] = False
+        return result
