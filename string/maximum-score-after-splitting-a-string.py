@@ -1,9 +1,14 @@
 class Solution:
     def maxScore(self, s: str) -> int:
-        ans = 0
-        for i in range(1, len(s)):
-            c1 = Counter(s[:i])
-            c2 = Counter(s[i:])
-            ans = max(ans, c1['0'] + c2['1'])
-        return ans
-                        
+        n = len(s)
+        pref0 = [0] * n
+        suff1 = [0] * n
+        
+        for i, ch in enumerate(s):
+            pref0[i] = int(ch == '0') + (pref0[i - 1] if i > 0 else 0)
+        for i in range(n - 1, -1, -1):
+            suff1[i] = int(s[i] == '1') + (suff1[i + 1] if i < n - 1 else 0)
+        best = 0
+        for i in range(n - 1):
+            best = max(best, pref0[i] + suff1[i + 1])
+        return best
