@@ -3,6 +3,6 @@ class Solution:
         char_ct = Counter(chars)
         result = 0 
         for word in words:
-            if Counter(word) - char_ct == Counter():
+            if Counter(word) <= char_ct:
                 result += len(word)
         return result
