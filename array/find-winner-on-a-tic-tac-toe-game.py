@@ -19,8 +19,8 @@ class Solution:
                 val = -1
             for path in cell_map[(a, b)]:
                 check[path] += val
-            if abs(check[path]) == 3:
-                return "A" if val == 1 else "B"
+                if abs(check[path]) == 3:
+                    return "A" if val == 1 else "B"
         if len(moves) == 9:
             return "Draw"
         return "Pending"
