@@ -23,3 +23,4 @@ class Solution:
                 return "A" if val == 1 else "B"
         if len(moves) == 9:
             return "Draw"
+        return "Pending"
