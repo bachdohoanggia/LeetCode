@@ -14,6 +14,6 @@ class Solution:
             
 
         best = 0
-        for i in range(n):
+        for i in range(n - 1):
             best = max(best, pref0[i] + suff1[i + 1])
         return best
