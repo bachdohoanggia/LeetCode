@@ -1,12 +1,9 @@
 class Solution:
     def shiftingLetters(self, s: str, shifts: List[int]) -> str:
         n = len(s)
-        total = sum(shifts)
-        prefix = [0] * n
-        prefix[0] = shifts[0]
-
-        for i in range(1, n):
-            prefix[i] = prefix[i - 1] + shifts[i]
+        prefix = list(accumulate(shifts))
+        total = prefix[-1]
+        
 
         result = []
         for i in range(n):
