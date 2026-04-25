@@ -4,7 +4,7 @@ class Solution:
         curr_odd = 0
         valid = 0
         for num in nums:
-            curr_odd += 1 if num % 2 == 1 else 0
+            curr_odd += num % 2
             prefix_odd[curr_odd] += 1
             valid += prefix_odd[curr_odd - k]
         return valid
