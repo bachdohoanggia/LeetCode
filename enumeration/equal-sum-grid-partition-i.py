@@ -6,6 +6,7 @@ class Solution:
 
         if total % 2 != 0:
             return False
+            
         for i in range(m - 1):
             row_sum += sum(grid[i])
             if row_sum == total / 2:
