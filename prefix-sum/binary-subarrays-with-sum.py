@@ -1,17 +1,10 @@
 class Solution:
     def numSubarraysWithSum(self, nums: List[int], goal: int) -> int:
-        n = len(nums)
-        prefix = [0] * n
-        prefix[0] = nums[0]
-        count = 0
-        for i in range(1, n):
-            prefix[i] = prefix[i - 1] + nums[i]
-        for i in range(n):
-            for j in range(i, n):
-                if i == 0:
-                    total = prefix[j]
-                else:
-                    total = prefix[j] - prefix[i-1]
-                if total == goal:
-                    count += 1
-        return count
+        count = defaultdict(int)
+        count[0] = 1
+        prefix, result = 0, 0
+        for num in nums:
+            prefix += num
+            result += count[prefix - goal]
+            count[prefix] += 1
+        return result
