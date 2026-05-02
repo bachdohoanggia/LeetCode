@@ -4,6 +4,6 @@ class Solution:
         res = []
         if n == 1:
             return nums[0]
-        for r in range(k, n):
+        for r in range(k, n + 1):
             res.append(sum(nums[r-k: r])/k)
         return max(res)
