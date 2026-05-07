@@ -15,7 +15,7 @@ class Solution:
                 best_len = min(best_len, i - prefix[target])
 
             prefix[cur] = i
-        return best_len
+        return best_len if best_len != inf else -1
 
             
             
