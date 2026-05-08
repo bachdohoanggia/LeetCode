@@ -11,12 +11,15 @@ class Solution:
             count[nums[i]] += 1
             window += nums[i]
         max_sum = window if len(count) >= m else 0
-        
+
         for right in range(k, n):
             window = window + nums[right] - nums[right - k]
+            count[nums[right]] += 1
+            count[nums[right - k]] -= 1
+            
             if count[nums[right - k]] == 0:
                 del count[nums[right - k]]
-            count[nums[right]] += 1
+
             if len(count) >= m:
                 max_sum = max(max_sum, window)
         return max_sum
