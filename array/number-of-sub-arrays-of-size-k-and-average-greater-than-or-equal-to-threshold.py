@@ -7,7 +7,7 @@ class Solution:
             count += 1 
 
         for right in range(k, n):
-            window = window * k + arr[right] - arr[right - k]
+            window = window + arr[right] - arr[right - k]
             if window / k >= threshold:
                 count += 1
         return count
