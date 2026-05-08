@@ -9,7 +9,7 @@ class Solution:
             count1[s1[i]] += 1
 
         for i in range(n1):
-            count2[s2[i]] += 1
+            count2[s2[i]] += 1 if n1 < n2 else False
 
         if count1 == count2:
             return True
