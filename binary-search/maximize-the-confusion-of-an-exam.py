@@ -10,6 +10,8 @@ class Solution:
             while (right - left + 1) - max_freq > k:
                 count[answerKey[left]] -= 1
                 left += 1
+                max_freq = max(max_freq, count[answerKey[right]])
+                
             max_len = max(max_len, right - left + 1)
         return max_len
 
