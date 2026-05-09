@@ -5,12 +5,12 @@ class Solution:
         left = 0
         product = 1
 
-        if k == 0:
+        if k <= 1:
             return 0
-            
+
         for right in range(n):
             product *= nums[right]
-            while product >= k:
+            while product >= k :
                 product = product // nums[left]
                 left += 1
             ans += right - left + 1 
