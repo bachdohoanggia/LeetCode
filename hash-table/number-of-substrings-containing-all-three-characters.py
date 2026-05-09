@@ -9,9 +9,9 @@ class Solution:
             count[s[right]] += 1
 
             while len(count) == 3:
-                ans += n - right
                 count[s[left]] -= 1
                 if count[s[left]] == 0:
                     del count[s[left]]
                 left += 1
+            ans += left
         return ans
