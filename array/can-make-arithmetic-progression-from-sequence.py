@@ -5,6 +5,6 @@ class Solution:
             return True
         arr.sort()
         for i in range(n - 2):
-            if abs(arr[i] - arr[i + 1]) == abs(arr[i + 1] - arr[i + 2]):
-                return True
-        return False
+            if abs(arr[i] - arr[i + 1]) != abs(arr[i + 1] - arr[i + 2]):
+                return False
+        return True
