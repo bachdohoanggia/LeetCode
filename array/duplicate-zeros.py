@@ -1,5 +1,8 @@
 class Solution:
     def duplicateZeros(self, arr: List[int]) -> None:
+        """
+        Do not return anything, modify arr in-place instead.
+        """
         zero = arr.count(0)
         n = len(arr)
         for i in range(n-1, -1, -1):
@@ -9,4 +12,7 @@ class Solution:
                 zero -= 1
                 if i + zero < n:
                     arr[i + zero] = 0
-            
+
+
+
+        
