@@ -1,15 +1,20 @@
 class Solution:
     def sortEvenOdd(self, nums: List[int]) -> List[int]:
-        evenarr = sorted(nums[::2])
-        oddarr = sorted(nums[1::2], reverse = True)
-        ans = [0]*len(nums)
-        e = 0
-        o = 0
+        evenli = []
+        oddli = []
+        for num in nums:
+            if num % 2 == 0:
+                evenli.append(num)
+            else:
+                oddli.append(num)
+        evenli.sort()
+        oddli.sort(reverse = True)
+        x, y = 0, 0
         for i in range(len(nums)):
             if i % 2 == 0:
-                ans[i] = evenarr[e]
-                e += 1
+                nums[i] = evenli[x]
+                x += 1
             else:
-                ans[i] = oddarr[o]
-                o += 1
-        return ans
+                nums[i] = oddli[y]
+                y += 1
+        return nums
