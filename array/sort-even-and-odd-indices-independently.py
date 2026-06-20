@@ -1,14 +1,7 @@
 class Solution:
     def sortEvenOdd(self, nums: List[int]) -> List[int]:
-        evenli = []
-        oddli = []
-        for i in range(len(nums)):
-            if i % 2 == 0:
-                evenli.append(nums[i])
-            else:
-                oddli.append(nums[i])
-        evenli.sort()
-        oddli.sort(reverse = True)
+        evenli = sorted(nums[::2])
+        oddli = sorted(nums[1::2], reverse = True)
         x, y = 0, 0
         for i in range(len(nums)):
             if i % 2 == 0:
