@@ -1,8 +1,8 @@
 class Solution:
     def islandPerimeter(self, grid: List[List[int]]) -> int:
         row, col = len(grid), len(grid[0])
-        edge_count = 0
         DIRS = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+        edge_count = 0
         for i in range(row):
             for j in range(col):
                 if grid[i][j] != 1:
@@ -16,5 +16,4 @@ class Solution:
                     if grid[ni][nj] == 1:
                         edges -= 1
                 edge_count += edges
-
-        return edge_count    
+        return edge_count
