@@ -7,7 +7,7 @@ class Solution:
             for j in range(n):
                 row[i] += mat[i][j]
                 col[j] += mat[i][j]
-        count = 0
+        count = 0 
         for i in range(m):
             for j in range(n):
                 if row[i] == 1 and col[j] == 1 and mat[i][j] == 1:
