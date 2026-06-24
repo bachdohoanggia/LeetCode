@@ -16,4 +16,3 @@ class Solution:
                 p_to_s[ch] = word
                 s_to_p[word] = ch
         return True
-        
