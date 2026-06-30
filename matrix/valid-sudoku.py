@@ -3,7 +3,7 @@ class Solution:
         box = [(0, 0), (0, 1), (0, 2),
                (1, 0), (1, 1), (1, 2),
                (2, 0), (2, 1), (2, 2)]
-               
+
         for i in range(9):
             row, col = set(), set()
             for j in range(9):
@@ -11,10 +11,10 @@ class Solution:
                     if board[i][j] in row:
                         return False
                     row.add(board[i][j])
-                if board[i][j] != ".":
-                    if board[i][j] in col:
+                if board[j][i] != ".":
+                    if board[j][i] in col:
                         return False
-                    col.add(board[i][j])
+                    col.add(board[j][i])
         
         for i in range(0, 9, 3):
             for j in range(0, 9, 3):
