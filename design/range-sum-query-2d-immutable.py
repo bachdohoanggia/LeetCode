@@ -12,7 +12,7 @@ class NumMatrix:
 
     def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
         rec1 = self.prefix[row1 - 1][col2] if row1 > 0 else 0
-        rec2 = self.prefix[row2][col1 - 1] if col2 > 0 else 0
+        rec2 = self.prefix[row2][col1 - 1] if col1 > 0 else 0
         rec3 = self.prefix[row1 - 1][col1 - 1] if (row1 > 0 and col1 > 0) else 0
         return self.prefix[row2][col2] - rec1 - rec2 + rec3
 
