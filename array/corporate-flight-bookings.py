@@ -11,4 +11,3 @@ class Solution:
         for i in range(1, n + 1):
             answer[i] = answer[i - 1] + arr[i]
         return answer[1:]
-
