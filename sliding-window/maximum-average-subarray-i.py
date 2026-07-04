@@ -7,4 +7,3 @@ class Solution:
             current = pref[i] - pref[i - k]
             max_sum = max(current, max_sum)
         return max_sum / k 
-        
