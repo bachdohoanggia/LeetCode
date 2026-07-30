@@ -31,10 +31,10 @@ class Solution:
                 return False
 
             # Push the children in mirror order:
-            queue.append(left.left);
+            queue.append(left.left)
             queue.append(right.right)
 
-            queue.append(left.right);
+            queue.append(left.right)
             queue.append(right.left)
 
         return True
